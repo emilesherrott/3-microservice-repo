@@ -9,5 +9,7 @@ ENV DB_PORT=5432
 ENV DB_HOST=pottery-db
 ENV DB_PASSWORD=pottery
 ENV DB_NAME=pottery
+
+ENV SECRET_TOKEN=thegreatpotterythrowdown
 EXPOSE 3000
 CMD ["node", "index.js"]

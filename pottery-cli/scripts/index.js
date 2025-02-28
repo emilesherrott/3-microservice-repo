@@ -47,6 +47,7 @@ const loadPotteryVisualisation = async (e) => {
         const data = await response.json()
         
         plotlySection.innerHTML = data.html
+        console.log(data.html)
 
         // We need to run the scripts generated from the Python Microservice so we grab all the scripts from the response and execute them by adding them to the body
         const scripts = plotlySection.querySelectorAll('div > script');
@@ -65,6 +66,8 @@ const loadPotteryVisualisation = async (e) => {
     }
 }
 
+
+const date = new Date()
 
 
 form.addEventListener('submit', loadPotteryVisualisation)

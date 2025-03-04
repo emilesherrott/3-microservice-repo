@@ -46,7 +46,7 @@ def generate_style_visualisation():
 
     # Create a pie chart using Matplotlib
     fig, ax = plt.subplots()
-    colors = ['#636efa', '#6e7bff', '#7c89ff', '#8a95ff', '#99a1ff']
+    colors = ['#636efa', '#ef6363', '#63efa7', '#efa563', '#ef63d1']
     ax.pie(sales, labels=styles, autopct='%1.1f%%', startangle=90, colors=colors[:len(styles)])
     ax.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a circle.
 

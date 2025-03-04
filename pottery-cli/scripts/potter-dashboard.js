@@ -59,6 +59,13 @@ const renderVisualisation = async (id) => {
     if (responseData.success) {
       visualiseH2.textContent = "Purchase History"
       visualiseDiv.innerHTML = responseData.visualisatinon.visualisation_html
+      const clearButton = document.querySelector("#remove-data")
+      clearButton.classList.toggle('hidden')
+      clearButton.addEventListener('click', () => {
+        visualiseDiv.innerHTML = ""
+        clearButton.classList.toggle('hidden')
+        visualiseH2.textContent = ""
+      }, {once: true})
 
       const scripts = visualiseDiv.querySelectorAll('div > script');
 
@@ -77,7 +84,6 @@ const renderVisualisation = async (id) => {
 
 const visualiseStyleInfo = async () => {
   try {
-    console.log("hit")
     const options = {
       headers: {
         Accept: "application/json",
@@ -89,6 +95,12 @@ const visualiseStyleInfo = async () => {
     const responseData = await response.json()
     if(responseData.success){
       renderPieSection.innerHTML = responseData.visualisatinon.visualisation_html
+      const closeButton = document.querySelector("#close-render")
+      closeButton.classList.toggle("hidden")
+      closeButton.addEventListener("click", () => {
+        renderPieSection.innerHTML = ""
+        closeButton.classList.toggle("hidden")
+      })
     }
   } catch (err) {
     console.log(err)
@@ -158,3 +170,4 @@ function capitaliseWords(str) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ")
 }
+

@@ -8,7 +8,6 @@ const ceramicsRouter = Router()
 ceramicsRouter.get("/", ceramicsController.index)
 ceramicsRouter.get("/inventory", authenticator, ceramicsController.inventory)
 ceramicsRouter.post("/create", authenticator, ceramicsController.create)
-ceramicsRouter.get("/visual", ceramicsController.generateVisualisation)
 
 module.exports = {
     ceramicsRouter
